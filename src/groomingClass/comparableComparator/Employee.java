@@ -1,5 +1,7 @@
 package groomingClass.comparableComparator;
 
+import java.util.Comparator;
+
 public class Employee implements Comparable<Employee>{
     private int id;
     private String name;
@@ -62,5 +64,23 @@ public class Employee implements Comparable<Employee>{
         else if(this.sal < o.sal)
             return -1;
         return 0;
+    }
+}
+class EmployeeBasedOnAge implements Comparator<Employee> {
+
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        if(o1.getAge() > o2.getAge())
+            return 1;
+        else if(o1.getAge() < o2.getAge())
+            return -1;
+        return 0;
+    }
+}
+class EmployeeBasedOnName implements Comparator<Employee> {
+
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        return o1.getName().compareTo(o2.getName());
     }
 }

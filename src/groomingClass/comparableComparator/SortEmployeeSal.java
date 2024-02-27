@@ -11,7 +11,18 @@ public class SortEmployeeSal {
         al.add(new Employee(3, "Rishab", 27000, 22));
         al.add(new Employee(4, "Biren", 12000, 22));
 
-        Collections.sort(al);
+//        to call the compareTo() ->
+        Collections.sort(al); // internally calls the compareTo() method
+        for(Employee ele : al){
+            System.out.println(ele);
+        }
+        System.out.println("------------------------------------------------------------");
+        Collections.sort(al, new EmployeeBasedOnAge());
+        for(Employee ele : al){
+            System.out.println(ele);
+        }
+        System.out.println("------------------------------------------------------------");
+        Collections.sort(al, new EmployeeBasedOnName());
         for(Employee ele : al){
             System.out.println(ele);
         }
